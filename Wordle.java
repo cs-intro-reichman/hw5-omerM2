@@ -1,6 +1,5 @@
 public class Wordle {
 
-    // Reads all words from dictionary filename into a String array.
     public static String[] readDictionary(String filename) {
 		// ...
     }
