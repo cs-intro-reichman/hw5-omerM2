@@ -1,7 +1,7 @@
 public class Wordle {
 
     public static String[] readDictionary(String filename) {
-        In in = new In(filename);
+        In in = new In("dictionary.txt");
         String[] dict = in.readAllStrings();
         in.close();
         return dict;
@@ -119,17 +119,8 @@ public class Wordle {
             while (!valid) {
                 System.out.print("Enter your guess (5-letter word): ");
                 guess = inp.readString();
-
-                // check if the guess is in the dictionary
-                boolean inDict = false;
-                for (int i = 0; i < dict.length; i++) {
-                    if (dict[i].equals(guess)) {
-                        inDict = true;
-                        break;
-                    }
-                }
                 
-                if (guess.length() != WORD_LENGTH || !inDict) { // ... check if the guess is valid
+                if (guess.length() != WORD_LENGTH) { // ... check if the guess is valid
                     System.out.println("Invalid word. Please try again.");
                 } else {
                     valid = true;
